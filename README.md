@@ -1,4 +1,3 @@
-#A new flutter project
 
 This is a project for me to gain experience with the Dart language.
 
