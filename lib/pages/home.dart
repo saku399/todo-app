@@ -33,7 +33,7 @@ class Home extends StatelessWidget {
       child: const TextField(
         decoration: InputDecoration(
           contentPadding: EdgeInsets.all(0),
-          prefix: Icon(
+          prefixIcon: Icon(
             Icons.search,
             color: tdBlack,
             size: 20,
@@ -43,6 +43,7 @@ class Home extends StatelessWidget {
             minWidth: 25,
           ),
           border: InputBorder.none,
+          hintText: 'Search',
           hintStyle: TextStyle(color: tdGrey),
         ),
       ),
