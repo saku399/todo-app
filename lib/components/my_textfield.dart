@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_app/constants/color.dart';
 
 class MyTextField extends StatelessWidget {
   final String hintText;
@@ -23,18 +24,18 @@ class MyTextField extends StatelessWidget {
         controller: controller,
         focusNode:focusNode,
         decoration: InputDecoration(
-          enabledBorder: OutlineInputBorder(
+          enabledBorder: const OutlineInputBorder(
             borderSide:
-                BorderSide(color: Theme.of(context).colorScheme.tertiary),
+                BorderSide(color: tdBlack),
           ),
-          focusedBorder: OutlineInputBorder(
+          focusedBorder: const OutlineInputBorder(
             borderSide:
-                BorderSide(color: Theme.of(context).colorScheme.tertiary),
+                BorderSide(color: tdBlack),
           ),
-          fillColor: Theme.of(context).colorScheme.secondary,
+          fillColor: tdBGColor,
           filled: true,
           hintText: hintText,
-          hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary),
+          hintStyle: const TextStyle(color: tdGrey),
         ),
       ),
     );

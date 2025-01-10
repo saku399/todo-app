@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_app/auth/auth_service.dart';
+import 'package:to_do_app/components/my_drawer.dart';
 import 'package:to_do_app/constants/color.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
+
+  void logout(){
+    final _auth = AuthService();
+    _auth.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: tdBGColor,
       appBar: _buildAppBar(),
+      drawer: const MyDrawer(),
       body: Container(
         padding: const EdgeInsets.symmetric(
           horizontal: 20,
@@ -55,13 +63,8 @@ class Home extends StatelessWidget {
         backgroundColor: tdBGColor,
         elevation: 0,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            const Icon(
-              Icons.menu,
-              color: tdBlack,
-              size: 30,
-            ),
             Container(
               height: 40,
               width: 40,

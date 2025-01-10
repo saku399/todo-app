@@ -1,9 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:to_do_app/pages/home.dart';
+import 'package:to_do_app/auth/auth.gate.dart';
+import 'package:to_do_app/firebase_options.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 }
 
 class MyApp extends StatelessWidget {
@@ -15,8 +19,7 @@ class MyApp extends StatelessWidget {
         const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'ToDo App',
-      home: Home(),
+      home: AuthGate(),
     );
   }
 }
